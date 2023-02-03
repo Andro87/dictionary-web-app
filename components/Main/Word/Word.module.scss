@@ -1,0 +1,151 @@
+@use "styles/helpers" as *;
+
+.word_data_container {
+    border: 4px solid red;
+    color: var(--text);
+    padding-top: 24px;
+    padding-bottom: 84px;
+    @include breakpoint($medium) {
+        padding-top: 50px;
+        padding-bottom: 118px;
+    }
+    @include breakpoint($large) {
+        padding-top: 43px;
+        padding-bottom: 120px;
+    }
+}
+.word {
+    border: 2px solid yellow;
+    display: flex;
+    justify-content: space-between;
+    h1 {
+        margin-top: 0;
+
+        span {
+            color: var(--accent-color);
+            font-size: 1.125rem;
+            line-height: 1.5rem;
+            display: block;
+            @include breakpoint($medium) {
+                font-size: 1.5rem;
+                line-height: 1.875rem;
+            }
+        }
+    }
+}
+
+.word_audio_container {
+    border: 2px solid red;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.word_meanings_container {
+    border: 2px solid lime;
+}
+
+.word_meaning {
+    border: 2px solid fuchsia;
+}
+.btn_play {
+    border: 2px solid yellow;
+    background-color: transparent;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    img {
+        max-width: 100%;
+    }
+    @include breakpoint($medium) {
+        width: 75px;
+        height: 75px;
+    }
+}
+
+.partOfSpeech_container {
+    border: 2px solid lime;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    hr {
+        width: 100%;
+        height: 1px;
+        background-color: var(--hr-break);
+        border: none;
+    }
+}
+.meaning {
+    border: 2px solid red;
+    h3 {
+        color: var(--sub-header);
+    }
+}
+.definition_list {
+    border: 2px solid blue;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+.definition_list_item {
+    border: 2px solid yellow;
+    padding-left: 25px;
+    &::marker {
+        color: var(--accent-color);
+    }
+}
+
+.synonyms_container {
+    border: 2px solid darkred;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    span {
+        color: var(--accent-color);
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 1.1875rem;
+        @include breakpoint($medium) {
+            font-size: 1.25rem;
+            line-height: 1.25;
+        }
+    }
+}
+.example {
+    font-size: 0.9375rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+    @include breakpoint($medium) {
+        font-size: 1.125rem;
+    }
+}
+
+.source_container {
+    border: 2px solid orangered;
+    border-top: 1px solid var(--hr-break);
+    padding-top: 24px;
+    h4 {
+        color: var(--sub-header);
+        text-decoration: underline;
+        margin-top: 0;
+    }
+}
+
+.source_wrap {
+    border: 2px solid midnightblue;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+    a {
+        color: var(--text);
+
+        font-size: 0.875rem;
+        font-weight: 400;
+        line-height: 1.125rem;
+    }
+}

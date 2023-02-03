@@ -1,0 +1,26 @@
+:root {
+    --main-bg: hsla(0, 0%, 100%, 1);
+    --text: hsla(0, 0%, 18%, 1);
+    --accent-color: hsla(274, 82%, 60%, 1);
+    --sub-header: hsla(0, 0%, 46%, 1);
+    --hr-break: hsla(0, 0%, 91%, 1);
+    --form-bg: hsla(0, 0%, 96%, 1);
+    --toggle-bg: hsla(0, 0%, 46%, 1);
+    --toggle-circle: hsla(0, 0%, 100%, 1);
+    --vert-break: hsla(0, 0%, 91%, 1);
+    --moon-icon: hsla(0, 0%, 46%, 1);
+    --alert: hsla(0, 100%, 66%, 1);
+    --option-box: hsla(0, 0%, 100%, 1);
+    --option-box-shadow: hsla(0, 0%, 0%, 0.1);
+}
+
+[data-theme="dark"] {
+    --main-bg: hsla(0, 0%, 2%, 1);
+    --text: hsla(0, 0%, 100%, 1);
+    --hr-break: hsla(0, 0%, 23%, 1);
+    --form-bg: hsla(0, 0%, 12%, 1);
+    --toggle-bg: hsla(274, 82%, 60%, 1);
+    --moon-icon: hsla(274, 82%, 60%, 1);
+    --option-box: hsla(0, 0%, 18%, 1);
+    --option-box-shadow: hsla(274, 82%, 60%, 1);
+}

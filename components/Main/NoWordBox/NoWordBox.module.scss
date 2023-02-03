@@ -1,0 +1,17 @@
+.container {
+    border: 2px solid lime;
+    text-align: center;
+    h1 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        line-height: 1.5rem;
+        color: var(--text);
+    }
+    p {
+        color: var(--sub-header);
+    }
+}
+
+.emoji {
+    font-size: 3.5rem;
+}
