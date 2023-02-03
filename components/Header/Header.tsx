@@ -5,6 +5,12 @@ import Logo from "svgr/logo.svg";
 import Moon from "svgr/icon-moon.svg";
 import Arrow from "svgr/icon-arrow-down.svg";
 
+import { Inconsolata, Inter, Lora } from "@next/font/google";
+
+const inter = Inter({ subsets: ["latin"] });
+const lora = Lora({ subsets: ["latin"] });
+const inconsolata = Inconsolata({ subsets: ["latin"] });
+
 interface Props {
     readonly chooseFontFamily: (font: string) => void;
 }
@@ -30,10 +36,6 @@ export const Header: React.FunctionComponent<Props> = props => {
         setIsDarkMode(prevValue => !prevValue);
     };
 
-    const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        const { value } = e.target;
-        chooseFontFamily(value);
-    };
     const handleOptionMenu = () => {
         setIsOptionsMenuOpen(prevValue => !prevValue);
     };
@@ -44,23 +46,20 @@ export const Header: React.FunctionComponent<Props> = props => {
 
             <div className={styles.options_container}>
                 <div className={styles.fonts_options_container}>
-                    <div className={styles.selected_font}>
+                    <div
+                        className={styles.selected_font}
+                        onClick={handleOptionMenu}
+                    >
                         <p>{font}</p>
-                        <button
-                            type="button"
-                            title="show options "
-                            className={styles.btn_show_options}
-                            onClick={handleOptionMenu}
-                        >
-                            <Arrow />
-                        </button>
+
+                        <Arrow />
                     </div>
                     {isOptionsMenuOpen && (
                         <div className={styles.fonts_options}>
                             <button
                                 type="button"
                                 title="sans serif"
-                                className={styles.btn_option}
+                                className={`${styles.btn_option} ${inter.className}`}
                                 onClick={() => {
                                     chooseFontFamily("inter");
                                     setFont("sans serif");
@@ -71,7 +70,7 @@ export const Header: React.FunctionComponent<Props> = props => {
                             <button
                                 type="button"
                                 title=" serif"
-                                className={styles.btn_option}
+                                className={`${styles.btn_option} ${lora.className}`}
                                 onClick={() => {
                                     chooseFontFamily("lora");
                                     setFont("serif");
@@ -82,7 +81,7 @@ export const Header: React.FunctionComponent<Props> = props => {
                             <button
                                 type="button"
                                 title="mono"
-                                className={styles.btn_option}
+                                className={`${styles.btn_option} ${inconsolata.className}`}
                                 onClick={() => {
                                     chooseFontFamily("inconsolata");
                                     setFont("mono");

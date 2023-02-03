@@ -2,6 +2,7 @@ import styles from "./Word.module.scss";
 
 import { WordData } from "@/modal/WordData";
 
+import Play from "svgr/icon-play.svg";
 import NewWindow from "svgr/icon-new-window.svg";
 
 interface Props {
@@ -29,10 +30,7 @@ export const Word: React.FunctionComponent<Props> = props => {
                                     onClick={() => wordSound.play()}
                                     key={index}
                                 >
-                                    <img
-                                        src="/assets/images/icon-play.svg"
-                                        alt="play"
-                                    />
+                                    <Play />
                                 </button>
                             )
                         );
@@ -69,7 +67,9 @@ export const Word: React.FunctionComponent<Props> = props => {
                                                             styles.example
                                                         }
                                                     >
-                                                        "{item.example}"
+                                                        `&quote;`
+                                                        {item.example}
+                                                        `&quote;`
                                                     </p>
                                                 )}
                                             </>
@@ -82,9 +82,14 @@ export const Word: React.FunctionComponent<Props> = props => {
                                         {meaning.synonyms.map(
                                             (synonym, index) => {
                                                 return (
-                                                    <span key={index}>
+                                                    <a
+                                                        key={index}
+                                                        href="https://www.google.com/"
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                    >
                                                         {synonym}
-                                                    </span>
+                                                    </a>
                                                 );
                                             }
                                         )}
@@ -100,8 +105,12 @@ export const Word: React.FunctionComponent<Props> = props => {
                 <h4>Source</h4>
                 {wordData.sourceUrls.map((source, index) => {
                     return (
-                        <div className={styles.source_wrap}>
-                            <a href={source} key={index} target="_blank">
+                        <div className={styles.source_wrap} key={index}>
+                            <a
+                                href={source}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 {source}
                             </a>
                             <NewWindow />

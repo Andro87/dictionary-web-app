@@ -1,7 +1,6 @@
 @use "styles/helpers" as *;
 
 .header {
-    border: 2px solid lime;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -17,22 +16,21 @@
 }
 
 .options_container {
-    border: 2px solid red;
     display: flex;
 }
 
 .fonts_options_container {
-    border: 2px solid lime;
     position: relative;
     min-width: 183px;
+    padding-right: 26px;
 }
 
 .selected_font {
-    border: 2px solid black;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     gap: 26px;
+    cursor: pointer;
     p {
         font-size: 1.125rem;
         font-weight: 700;
@@ -42,13 +40,7 @@
     }
 }
 
-.btn_show_options {
-    border: 2px solid fuchsia;
-    background-color: transparent;
-}
-
 .fonts_options {
-    border: 3px solid orangered;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -65,21 +57,20 @@
 }
 
 .btn_option {
-    border: 2px solid yellow;
     background-color: transparent;
+    border: none;
     text-transform: capitalize;
-    font-family: inherit;
     font-size: 1.125rem;
     font-weight: 700;
     line-height: 1.5rem;
     color: var(--text);
     cursor: pointer;
+    @include transition;
     &:hover {
         color: var(--accent-color);
     }
 }
 .toggle_container {
-    border: 2px solid blue;
     display: flex;
     align-items: center;
     gap: 12px;
@@ -92,7 +83,6 @@
     }
 }
 .toggle_wrap {
-    border: 2px solid yellow;
     width: 40px;
     height: 20px;
     border-radius: 10px;
@@ -100,6 +90,11 @@
     padding: 3px;
     display: flex;
     align-items: center;
+    @include transition;
+    &:hover {
+        cursor: pointer;
+        background-color: var(--accent-color);
+    }
 }
 
 .toggle_circle {

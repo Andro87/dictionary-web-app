@@ -74,7 +74,9 @@ export const Main = () => {
     return (
         <main className={styles.main}>
             <form
-                className={`${styles.main_form} ${styles.main_form_error}`}
+                className={`${styles.main_form} ${
+                    error && styles.main_form_error
+                }`}
                 onSubmit={handleSubmit}
             >
                 <input

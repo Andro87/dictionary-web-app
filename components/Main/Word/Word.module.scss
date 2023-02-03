@@ -1,7 +1,6 @@
 @use "styles/helpers" as *;
 
 .word_data_container {
-    border: 4px solid red;
     color: var(--text);
     padding-top: 24px;
     padding-bottom: 84px;
@@ -15,7 +14,6 @@
     }
 }
 .word {
-    border: 2px solid yellow;
     display: flex;
     justify-content: space-between;
     h1 {
@@ -26,6 +24,7 @@
             font-size: 1.125rem;
             line-height: 1.5rem;
             display: block;
+            margin-top: 10px;
             @include breakpoint($medium) {
                 font-size: 1.5rem;
                 line-height: 1.875rem;
@@ -35,31 +34,27 @@
 }
 
 .word_audio_container {
-    border: 2px solid red;
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.word_meanings_container {
-    border: 2px solid lime;
-}
-
-.word_meaning {
-    border: 2px solid fuchsia;
-}
 .btn_play {
-    border: 2px solid yellow;
+    border: none;
     background-color: transparent;
-    width: 48px;
-    height: 48px;
-    display: flex;
-    align-items: center;
     cursor: pointer;
-
-    img {
-        max-width: 100%;
+    svg {
+        &:hover {
+            g {
+                fill: var(--accent-color);
+            }
+            circle {
+                @include transition;
+                opacity: 0.7;
+            }
+        }
     }
+
     @include breakpoint($medium) {
         width: 75px;
         height: 75px;
@@ -67,7 +62,6 @@
 }
 
 .partOfSpeech_container {
-    border: 2px solid lime;
     display: flex;
     align-items: center;
     gap: 20px;
@@ -79,39 +73,40 @@
     }
 }
 .meaning {
-    border: 2px solid red;
     h3 {
         color: var(--sub-header);
     }
 }
 .definition_list {
-    border: 2px solid blue;
     display: flex;
     flex-direction: column;
     gap: 13px;
 }
 .definition_list_item {
-    border: 2px solid yellow;
     padding-left: 25px;
     &::marker {
         color: var(--accent-color);
+        padding-left: 10px;
     }
 }
 
 .synonyms_container {
-    border: 2px solid darkred;
     display: flex;
     align-items: center;
     gap: 24px;
 
-    span {
+    a {
         color: var(--accent-color);
         font-size: 1rem;
         font-weight: 700;
         line-height: 1.1875rem;
+        text-decoration: none;
         @include breakpoint($medium) {
             font-size: 1.25rem;
             line-height: 1.25;
+        }
+        &:hover {
+            text-decoration: underline;
         }
     }
 }
@@ -119,13 +114,13 @@
     font-size: 0.9375rem;
     font-weight: 400;
     line-height: 1.5rem;
+    margin-top: 0;
     @include breakpoint($medium) {
         font-size: 1.125rem;
     }
 }
 
 .source_container {
-    border: 2px solid orangered;
     border-top: 1px solid var(--hr-break);
     padding-top: 24px;
     h4 {
@@ -136,7 +131,6 @@
 }
 
 .source_wrap {
-    border: 2px solid midnightblue;
     display: flex;
     align-items: center;
     gap: 15px;

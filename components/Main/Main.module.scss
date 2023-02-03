@@ -1,11 +1,7 @@
 @use "styles/helpers" as *;
 
-.main {
-    border: 2px solid blue;
-}
-
 .main_form {
-    border: 2px solid red;
+    border: 1px solid transparent;
     background-color: var(--form-bg);
     border-radius: 16px;
     padding: 16px;
@@ -13,8 +9,13 @@
     align-items: center;
     justify-content: space-between;
     position: relative;
+    cursor: pointer;
+
     @include breakpoint($medium) {
         padding: 22px;
+    }
+    &:hover {
+        border: 1px solid var(--accent-color);
     }
 }
 
@@ -23,17 +24,20 @@
 }
 
 .main_input {
-    border: 2px solid magenta;
     background-color: transparent;
+    caret-color: var(--accent-color);
+    border: none;
+    outline: none;
+    color: var(--text);
+
     &::placeholder {
-        color: var(--text);
         opacity: 0.25;
     }
 }
 
 .btn_search {
-    border: 2px solid lime;
     background-color: transparent;
+    border: none;
 }
 
 .error_message {
